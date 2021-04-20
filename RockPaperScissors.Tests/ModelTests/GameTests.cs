@@ -10,9 +10,17 @@ namespace RockPaperScissors.Tests
   public class RockPaperScissorsTests
   {
     [TestMethod]
-    public void ItemConstructor_CreatesInstanceOfItem_Item()
+    public void GameConstructor_CreatesInstanceOfGame_Throw()
     {
-    
+      Game newGame = new Game("test");
+      Assert.AreEqual(typeof(Game), newGame.GetType());
+    }
+
+    [TestMethod]
+    public void GameConstructor_TestsInstanceOfGame_Throw()
+    {
+      Game newGame = new Game("test");
+      Assert.AreEqual(newGame.Player1Throw, "test");
     }
   }
 }
