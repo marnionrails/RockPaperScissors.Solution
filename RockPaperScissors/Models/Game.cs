@@ -18,6 +18,26 @@ namespace RockPaperScissors.Models
         Winner = DetermineWinner();
       }
     }
+
+    public string GetWinMessage()
+    {
+      string winMessage = "";
+
+      if (Winner == "Draw")
+      {
+        winMessage = "It's a draw!";
+      }
+      else if (Winner == "Error!")
+      {
+        winMessage = "There was an error...";
+      }
+      else
+      {
+        winMessage = Winner + " is the winner!";
+      }
+
+      return winMessage;
+    }
     
     private string GenerateRandomThrow()
     {
